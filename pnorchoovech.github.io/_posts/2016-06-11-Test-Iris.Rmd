@@ -1,0 +1,28 @@
+---
+title: "Test R Blog"
+---
+**Author**: Palm Norch <br/>
+**Date Created**: 2015-11-30 <br/>
+**Date Updated**: 2015-11-30 <br/>
+**Summary**: Test posting with iris data <br/>
+
+<p> This is a test post</p>
+```{r, echo=FALSE, include=FALSE}
+
+## Libraries
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+##
+
+
+```
+```{r}
+cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999" )
+
+iris %>%
+  ggplot(aes(factor(Species))) + 
+  geom_bar(aes(fill=Species)) + 
+  theme(text=element_text(family="Helvetica", size =14)) + 
+  scale_fill_manual(values=cbPalette)
+```
